@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <div class="row g-2">
+        <div class="col-md-6 offset-md-3">
+            <div class="card shadow-lg mb-0">
+                <div class="card-header p-2 text-end">
+                    <button class="btn btn-sm btn-info" (click)="openForm()">Tambah</button>
+                </div>
+                <div class="card-body p-2">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <td>NIM</td>
+                                <td>Nama</td>
+                                <td>Tahun Angkatan</td>
+                                <td width="20%"></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let dt of listData">
+                                <td>{{ dt.nim }}</td>
+                                <td>{{ dt.nama }}</td>
+                                <td>{{ dt.tahun_angkatan }}</td>
+                                <td>
+                                    <button class="btn btn-outline-info btn-sm me-2" (click)="openForm(dt)">Edit</button>
+                                    <button class="btn btn-outline-danger btn-sm" (click)="hapus(dt.id_mahasiswa)">Hapus</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

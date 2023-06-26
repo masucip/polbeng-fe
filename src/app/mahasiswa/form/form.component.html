@@ -1,0 +1,30 @@
+<div class="modal-header">
+    <h3 class="mb-0">Data Mahasiswa</h3>
+</div>
+<div class="modal-body">
+    <div class="row g-2" [formGroup]="form">
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="">NIM</label>
+                <input type="text" class="form-control" formControlName="nim">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="">Tahun Angkatan</label>
+                <input type="text" class="form-control" formControlName="tahun_angkatan">
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="">Nama</label>
+                <input type="text" class="form-control" formControlName="nama">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer d-flex justify-content-between">
+    <button class="btn btn-warning" (click)="activeModal.close()">Batal</button>
+    <button class="btn btn-info" *ngIf="!form.get('id_mahasiswa')?.value" (click)="save()">Simpan</button>
+    <button class="btn btn-info" *ngIf="form.get('id_mahasiswa')?.value" (click)="update()">Update</button>
+</div>
